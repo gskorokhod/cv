@@ -17,7 +17,6 @@
 \usepackage[pdftex]{hyperref}
 \usepackage{fancyhdr}
 
-
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
@@ -45,145 +44,263 @@
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[2]{
-  \item\small{
+\item\small{
     \textbf{#1}{ #2 \vspace{-2pt}}
   }
 }
 
 \newcommand{\resumeSubheading}[5]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}
-    \par{\small{#5}\vspace{-2pt}}
+  \vspace{-1pt}
+\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}
+  \par{\small{#5}\vspace{-2pt}}
 }
-
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
 \renewcommand{\labelitemii}{$\circ$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{
+\begin{itemize}[leftmargin=*]}
+    \newcommand{\resumeSubHeadingListEnd}{
+  \end{itemize}}
+\newcommand{\resumeItemListStart}{
+\begin{itemize}}
+    \newcommand{\resumeItemListEnd}{
+  \end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \begin{document}
-
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}l}
-  \textbf{{\Large Georgii Skorokhod}} & Email : \href{mailto:mail@gskorokhod.com}{mail@gskorokhod.com}\\
-  {Penultimate year Computer Science student} & Mobile : +44 (0) 7586 882 668 \\
+  \textbf{{\Large Georgii Skorokhod}} & Email :
+  \href{mailto:mail@gskorokhod.com}{mail@gskorokhod.com}\\
+  {Fourth year Computer Science student} & Mobile : +44 (0) 7586 882 668 \\
+  {} & Githib: \href{https://github.com/gskorokhod}{@gskorokhod}
 \end{tabular*}
-
 
 %-----------EDUCATION-----------------
 \section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {University of St. Andrews}{St. Andrews, Scotland, UK}
-      {Computer Science (BSc); Grade average: 17.5 / 20 (Year 2)}{Sep. 2022 - Present}
-      {}
-    \resumeSubheading
-      {Bauman Engineering School №1580}{Moscow, Russia}
-      {High School (Physics \& Mathematics track); Grade average: 5.0 / 5.0}{Sep. 2017 - Jun. 2022}
-      {}
-  \resumeSubHeadingListEnd
-
+\resumeSubHeadingListStart
+\resumeSubheading
+{University of St. Andrews}{St. Andrews, Scotland, UK}
+{Computer Science (BSc); Grade average: 17.5 / 20 (Year 2)}{Sep. 2022 - Present}
+{}
+\resumeSubheading
+{Bauman Engineering School №1580}{Moscow, Russia}
+{High School (Physics \& Mathematics track); Grade average: 5.0 /
+5.0}{Sep. 2017 - Jun. 2022}
+{}
+\resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------------
 \section{Experience}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Research Intern (STARIS)}{St. Andrews, Scotland, UK}
-      {University of St. Andrews}{Jun. 2024 - Present}
-      { As part of the St Andrews Research Internship Scheme (STARIS), I am working on the practical application of constraints programming for scheduling and workforce management problems, under the supervision of Dr. Ozgur Akgun. }
-      \resumeItemListStart
-        \resumeItem{Reactive UI with Svelte \& Typescript \\}
-          {I have developed a reactive web application that gives users an intuitive way to enter employee data and availability, manage tasks, schedule shifts, and define the constraints that need to be satisfied. }
-        \resumeItem{Geocoding with the OSM API \\}
-          {To allow users to easily schedule shifts for different physical locations, I have developed an integration with the OpenStreetMaps API to look up coordinates and addresses, and visualise them on an interactive map. }
-        \resumeItem{Constraints modelling \\}
-          {I have worked on client-side logic to generate an input file to the Conjure constraints modelling tool based on the data provided by the user, including handling custom user-defined constraints. }
-        \resumeItem{CI and TDD \\}
-          {I have developed unit tests with Vitest, integration tests with Playwright, and automated linting, testing, and deployment using GitHub Actions.}
-      \resumeItemListEnd
-    \resumeSubheading
-      {Vertically Integrated Project - Constraints Modelling}{St. Andrews, Scotland, UK}
-      {University of St. Andrews; Grade achieved: 20 / 20}{Sep. 2023 - May 2024}
-      {As part of a Vertically Integrated Project (VIP), I have worked with a team of students and university staff on the \href{https://github.com/conjure-cp/conjure-oxide}{'conjure-oxide'} project - a full Rust rewrite of the \href{https://github.com/conjure-cp/conjure}{'conjure' constraints modelling tool}, focusing on a clean architecture, compile-time optimisation, and support for incremental solving of constraints problems. }
-      \resumeItemListStart
-        \resumeItem{Rust \\}
-          {Working on this project, I have learned the Rust programming language and gained a better understanding of memory management, concurrency, and the cargo build system.}
-        \resumeItem{Developing an Essence language compiler \\}
-          {Essence is a domain-specific language for defining constraints problems, used as input for Conjure. I have developed a Rust representation of an Essence AST and a \href{https://github.com/conjure-cp/conjure-oxide/wiki/Expression-rewriting,-Rules-and-RuleSets}{rewrite engine} that simplifies it down to a low-level, solver-specific representation.  As part of this, I have developed macros to auto-generate the necessary code for traversing the AST in a generic way.}
-        \resumeItem{AGILE \\}
-          {I have worked alongside a team of students from multiple years, using git for version control and collaboration, and following the AGILE software development methodology. }
-      \resumeItemListEnd
-      \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
+\resumeSubheading
+{Intern (Central Technology group)}{Cambridge, UK}
+{ARM}{Jun. 2025 - Present}
+{ I am currently working as an intern for the Central Technology
+  group at ARM, where I am involved in the development of an internal
+tool for benchmarking chip performance using a machine learning model. }
+\resumeSubheading
+{Research Intern (STARIS)}{St. Andrews, Scotland, UK}
+{University of St. Andrews}{Jun. 2024 - May 2025}
+{ As part of the St Andrews Research Internship Scheme (STARIS), I am
+  working on the practical application of constraints programming for
+  scheduling and workforce management problems, under the supervision
+of Dr. Ozgur Akgun. }
+\resumeItemListStart
+\resumeItem{Reactive UI with Svelte \& Typescript \\}
+{I have developed a reactive web application that gives users an
+  intuitive way to enter employee data and availability, manage tasks,
+schedule shifts, and define the constraints that need to be satisfied. }
+\resumeItem{Geocoding with the OSM API \\}
+{To allow users to easily schedule shifts for different physical
+  locations, I have developed an integration with the OpenStreetMaps
+  API to look up coordinates and addresses, and visualise them on an
+interactive map. }
+\resumeItem{Constraints modelling \\}
+{I have worked on client-side logic to generate an input file to the
+  Conjure constraints modelling tool based on the data provided by the
+user, including handling custom user-defined constraints. }
+\resumeItem{CI and TDD \\}
+{I have developed unit tests with Vitest, integration tests with
+  Playwright, and automated linting, testing, and deployment using
+GitHub Actions.}
+\resumeItemListEnd
+\resumeSubheading
+{Vertically Integrated Project - Constraints Modelling}{St. Andrews,
+Scotland, UK}
+{University of St. Andrews; Grade achieved: 20 / 20}{Sep. 2023 - May 2024}
+{As part of a Vertically Integrated Project (VIP), I have worked with
+  a team of students and university staff on the
+  \href{https://github.com/conjure-cp/conjure-oxide}{'conjure-oxide'}
+  project - a full Rust rewrite of the
+  \href{https://github.com/conjure-cp/conjure}{'conjure' constraints
+  modelling tool}, focusing on a clean architecture, compile-time
+optimisation, and support for incremental solving of constraints problems. }
+\resumeItemListStart
+\resumeItem{Rust \\}
+{Working on this project, I have learned the Rust programming
+  language and gained a better understanding of memory management,
+concurrency, macros, and the cargo build system.}
+\resumeItem{Developing an Essence language compiler \\}
+{Essence is a domain-specific language for defining constraints
+  problems, used as input for Conjure. I have developed a Rust
+  representation of an Essence AST and a
+  \href{https://github.com/conjure-cp/conjure-oxide/wiki/Expression-rewriting,-Rules-and-RuleSets}{rewrite
+  engine} that simplifies it down to a low-level, solver-specific
+  representation.  As part of this, I have developed macros to
+auto-generate the necessary code for traversing the AST in a generic way.}
+\resumeItem{AGILE \\}
+{I have worked alongside a team of students from multiple years,
+  using git for version control and collaboration, and following the
+AGILE software development methodology. }
+\resumeItemListEnd
+\resumeSubHeadingListEnd
 
 \section{Extracurricular Activities}
- \resumeSubHeadingListStart
-    \resumeSubheading
-      {Committee Member for Research}{St. Andrews, Scotland, UK}
-      {Campaign for Affordable Student Housing (CASH)}{May 2024 - Present}
-      {  }
-      \resumeItemListStart
-        \resumeItem{The St. Andrews Rent Map \\}
-          {One of my main tasks is administering an annual survey of students and community members about their housing situation, analysing the data, and creating a \href{https://www.google.com/maps/d/viewer?mid=1zf78ODx0XEIRSom3jh77OIWpTgcgyjE&usp=sharing}{visual map} of rental prices around St Andrews.  }
-        \resumeItem{Research \& Support \\}
-          {As a CASH committee member, my core mission is conducting research to provide informational support for the campaign, ensuring that it can continue to operate safely and effectively, as well as informing other students about their rights as tenants. }
-        \resumeItem{The St. Candrews Food Bank \\}
-          {I have also taken part in organising donation drives for a student-operated food bank to help students and other members of our community who are struggling with the cost of living. }
-      \resumeItemListEnd
-      \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
+\resumeSubheading
+{Committee Member for Research}{St. Andrews, Scotland, UK}
+{Campaign for Affordable Student Housing (CASH)}{May 2024 - Dec. 2024}
+{  }
+\resumeItemListStart
+\resumeItem{The St. Andrews Rent Map \\}
+{One of my main tasks is administering an annual survey of students
+  and community members about their housing situation, analysing the
+  data, and creating a
+  \href{https://www.google.com/maps/d/viewer?mid=1zf78ODx0XEIRSom3jh77OIWpTgcgyjE&usp=sharing}{visual
+map} of rental prices around St Andrews.  }
+\resumeItem{Research \& Support \\}
+{As a CASH committee member, my core mission was conducting research
+  to ensure that our campaign
+  can operate safely and effectively, as well as raising
+  awareness about housing issues and informing students about their
+rights as tenants. }
+\resumeItem{The St. Candrews Food Bank \\}
+{I have taken part in organising donation drives for a
+  student-operated food bank to help students and other members of our
+community who are struggling with the cost of living. }
+\resumeItemListEnd
+\resumeSubHeadingListEnd
 
 \section{Projects}
-  \resumeSubHeadingListStart
-    \resumeSubItem{\href{https://github.com/gskorokhod/PygameChess}{Pygame Chess} \\}
-      {A simple chess game written in Python, complete with an automated opponent using the MinMax algorithm.}
-    \resumeSubItem{Linux Homelab \\}
-      {I am using a Linux server to self-host a file sharing service and gaming servers for myself and my friends, automatic regular backups of important files from my laptop, and my website at \href{https://gskorokhod.com}{gskorokhod.com} (currently under development).\\ This has helped me learn Docker, the UNIX command line, and the basics of web technology. }
-    \resumeSubItem{Greenbox \\}
-      {In high school, I have worked with a team of students to build a fully automated greenhouse for herbs and small plants, based on the Arduino microcontroller. It included climate control, lighting, and a configuration UI. Our project has won a bronze medal for the Russian delegation at the International Exhibition for Young Inventors (IEYI-2019) in Jakarta.}
-  \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
+\resumeSubItem{\href{https://github.com/gskorokhod/PygameChess}{Pygame
+Chess} \\}
+{A simple chess game written in Python, complete with an automated
+opponent using the MinMax algorithm.}
+\resumeSubItem{Linux Homelab \\}
+{I am using a Linux server to self-host a file sharing service and
+  gaming servers for myself and my friends, automatic regular backups
+  of important files from my laptop, and my website at
+  \href{https://gskorokhod.com}{gskorokhod.com} (currently under
+  development).\\ This has helped me learn Docker, the UNIX command
+line, and the basics of web technology. }
+\resumeSubItem{Greenbox \\}
+{In high school, I have worked with a team of students to build a
+  fully automated greenhouse for herbs and small plants, based on the
+  Arduino microcontroller. It included climate control, lighting, and a
+  configuration UI. Our project has won a bronze medal for the Russian
+  delegation at the International Exhibition for Young Inventors
+(IEYI-2019) in Jakarta.}
+\resumeSubHeadingListEnd
 
 %-------SKILLS------------
 \section{Skills}
- \resumeSubHeadingListStart
-   \resumeSubItem{Programming languages}{: Rust, C, Python, Java, Typescript, JS + HTML + CSS, SQL }
-   \resumeSubItem{Skills \& Frameworks}{: Git, Docker, UNIX Shell, Tensorflow, Node.js, Svelte, React, SQL Databases }
-   \resumeSubItem{Fundamentals}{: Algorithms \& Data Structures, Networking, OS Programming, Web Development }
-   \resumeSubItem{Natural languages}{: English (IELTS 8.0), Russian (native), German (beginner) }
- \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
+\resumeSubItem{Programming languages}{: Rust, C, Python, Java,
+Typescript, JS + HTML + CSS, SQL }
+\resumeSubItem{Skills \& Frameworks}{: Git, Docker, UNIX Shell,
+Tensorflow, Node.js, Svelte, React, SQL Databases }
+\resumeSubItem{Fundamentals}{: Algorithms \& Data Structures,
+Networking, OS Programming, Web Development }
+\resumeSubItem{Natural languages}{: English (IELTS 8.0), Russian
+(native), German (beginner) }
+\resumeSubHeadingListEnd
 
 \section{Modules}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {CS2002 - Computer Systems}{Grade: 17.6 / 20}
-      {University of St. Andrews}{2023-2024}
-      { I have learned about system calls, inline assembly, memory management and concurrency in C. Furthermore, I have developed a C program for generating the truth tables of logical expressions, and learned about the DPLL algorithm. }
-    \resumeSubheading
-      {CS2001 - Foundations of Computation}{Grade: 17.3 / 20}
-      {University of St. Andrews}{2023-2024}
-      { I have learned some fundamental concepts in Computer Science, including Finite State Automata, grammars, computational complexity, and Big-O Notation. Moreover, I have practiced implementing trees, hash sets and other data structures in Java. }
-    \resumeSubheading
-      {CS2003 - The Internet and the Web}{Grade: 16.8 / 20}
-      {University of St. Andrews}{2023-2024}
-      { I have learned about the OSI model and the fundamentals of networking. Applying this knowledge in practice, I have developed a simple client-server multi-user CLI messaging application using TCP sockets in Java, built a REST API server in Node.js, and developed a reactive drag-and-drop UI for managing playlists. }
-    \resumeSubheading
-      {IE1250 - Mathematics B}{Grade: 17.7 / 20}
-      {University of St. Andrews}{2022-2023}
-      { As part of the International Foundation program, I have covered the basics of algebra and calculus, such as limits, integration, differentiation, series, complex numbers, and linear algebra.  }
-   \resumeSubHeadingListEnd
-
-
+\resumeSubHeadingListStart
+\resumeSubheading
+{CS3102 (Data Communications \& Networks)}{Grade: 16.4 / 20 (Final:
+TBA)}{University of St. Andrews}{2024-2025}
+{Studied the design and implementation of network protocols such as
+  TCP in depth; Learned about the OSI model and the TCP/IP stack;
+Developed a reliable data transfer protocol in C using sockets.}
+\resumeSubheading
+{CS3105 (Artificial Intelligence)}{Grade: 15.5 / 20}{University of
+St. Andrews}{2024-2025}
+{Studied the fundamentals of AI, including search algorithms,
+  knowledge representation, machine learning techniques, and Bayesian
+  statistics.
+  Implemented and Benchmarked various search algorithms on the Knight's
+Tour problem. }
+\resumeSubheading
+{CS3104 (Operating Systems)}{Grade: 17.9 / 20}{University of St.
+Andrews}{2024-2025}
+{Studied the various components of operating systems, including
+  scheduling, memory management, file systems, and device drivers.
+  Implemented a scheduler, a memory allocator, and a copy of the
+\verb|ls| user-space utility for a simple kernel written in C++. }
+\resumeSubheading
+{CS3052 (Computational Complexity)}{Grade: 18.3 / 20 (Final:
+TBA)}{University of St. Andrews}{2024-2025}
+{Studied the fundamentals of complexity theory, including Turing
+  machines, language classes, and reductions. Learned to assess the
+space and memory complexity of practical algorithms.}
+\resumeSubheading
+{CS3050 (Logic \& Reasoning)}{Grade: 15.5 / 20}{University of St.
+Andrews}{2024-2025}
+{Studied the fundamentals of propositional logic, the predicate
+  calculus, and first-order theories.
+  Applied practical reasoning techniques and systems, such as
+  tableau, to solve practical problems.
+  Developed a simple interpreter for the Prolog logic programming
+language in Java. }
+\resumeSubheading
+{$2^{\text{nd}}$ Year Modules}{Grade: 17.5 / 20 (average)}{University
+of St. Andrews}{2023-2024}
+{Studied the fundamentals of computer networking, web development,
+  concurrency, and systems programming. Learned about algorithms,
+  data structures, and the fundamentals of computation. Developed a
+  multi-user CLI messaging application using TCP sockets in Java, a
+  REST API server in Node.js, a reactive drag-and-drop UI for
+managing playlists in jQuery, and a C program for evaluating logical formulae.}
+% {CS2002 - Computer Systems}{Grade: 17.6 / 20}
+% {University of St. Andrews}{2023-2024}
+% { I have learned about system calls, inline assembly, memory
+%   management and concurrency in C. Furthermore, I have developed a C
+%   program for generating the truth tables of logical expressions, and
+% learned about the DPLL algorithm. }
+% \resumeSubheading
+% {CS2001 - Foundations of Computation}{Grade: 17.3 / 20}
+% {University of St. Andrews}{2023-2024}
+% { I have learned some fundamental concepts in Computer Science,
+%   including Finite State Automata, grammars, computational complexity,
+%   and Big-O Notation. Moreover, I have practiced implementing trees,
+% hash sets and other data structures in Java. }
+% \resumeSubheading
+% {CS2003 - The Internet and the Web}{Grade: 16.8 / 20}
+% {University of St. Andrews}{2023-2024}
+% { I have learned about the OSI model and the fundamentals of
+%   networking. Applying this knowledge in practice, I have developed a
+%   simple client-server multi-user CLI messaging application using TCP
+%   sockets in Java, built a REST API server in Node.js, and developed a
+% reactive drag-and-drop UI for managing playlists. }
+\resumeSubheading
+{IE1250 - Mathematics B}{Grade: 17.7 / 20}
+{University of St. Andrews}{2022-2023}
+{ Covered the
+  basics of algebra and calculus, such as limits, integration,
+differentiation, series, complex numbers, and linear algebra.  }
+\resumeSubHeadingListEnd
 
 %-------------------------------------------
 \end{document}
